@@ -1,0 +1,10 @@
+{
+	"name"        : "Perl6 Snowball Binding",
+	"version"     : "0.1",
+	"description" : "Perl 6 binding to the 'Snowball compiler and stemming algorithms' http://snowballstem.org/",
+	"depends"     : [ ],
+	"provides"    : {
+		"Lingua::Stem::Snowball"	    : "lib/Lingua/Stem/Snowball.pm6"
+	},
+	"source-url"  : "git://github.com/sufrostico/perl6-snowball.git"
+}
