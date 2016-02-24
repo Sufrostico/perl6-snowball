@@ -8,24 +8,6 @@ use NativeCall;
 constant LIB = 'libstemmer';
 
 #`[
-struct sb_stemmer {
-    struct SN_env * (*create)(void);
-    void (*close)(struct SN_env *);
-    int (*stem)(struct SN_env *);
-
-    struct SN_env * env;
-}; ]
-class sb_stemmer is repr('CStruct') {
-
-    has Pointer $.create;
-    has Pointer $.close;
-    has Pointer $.stem;
-
-    has SN_env $.env;
-}
-
-
-#`[
 struct SN_env {
     symbol * p;
     int c; int l; int lb; int bra; int ket;
@@ -46,6 +28,25 @@ class SN_env is repr('CStruct') {
     has Pointer[int32]  $.I;
     has CArray[int8]    $.B;
 }
+
+#`[
+struct sb_stemmer {
+    struct SN_env * (*create)(void);
+    void (*close)(struct SN_env *);
+    int (*stem)(struct SN_env *);
+
+    struct SN_env * env;
+}; ]
+class sb_stemmer is repr('CStruct') {
+
+    has Pointer $.create;
+    has Pointer $.close;
+    has Pointer $.stem;
+
+    has SN_env $.env;
+}
+
+
 
 # Not used here
 # typedef unsigned char sb_symbol; 
@@ -87,7 +88,7 @@ sub sb_stemmer_list() returns CArray[Str] is native(LIB) is export {*};
  *  @note NULL will also be returned if an out of memory error occurs.  ]
 
  # struct sb_stemmer * sb_stemmer_new(const char * algorithm, const char * charenc);
-sub sb_stemmer_new(Str algorithm, Str charenc) returns sb_stemmer is native(LIB) is export{*};
+sub sb_stemmer_new(Str, Str) returns sb_stemmer is native(LIB) is export {*};
 
 #`[ Delete a stemmer object.
  *
@@ -98,7 +99,7 @@ sub sb_stemmer_new(Str algorithm, Str charenc) returns sb_stemmer is native(LIB)
  *  no effect.  ]
 
 # void                sb_stemmer_delete(struct sb_stemmer * stemmer);
-sub sb_stemmer_delete(sb_stemmer) is native(LIB) is export{*};
+sub sb_stemmer_delete(sb_stemmer) is native(LIB) is export {*};
 
 #`[ Stem a word.
  *
@@ -117,4 +118,4 @@ sub sb_stemmer_stem(sb_stemmer, int8 , int32 ) returns Str is native(LIB) is exp
  *  This should not be called before sb_stemmer_stem() has been called.  ]
 
 # int                 sb_stemmer_length(struct sb_stemmer * stemmer);
-sub sb_stemmer_length(sb_stemmer) returns int32 is native(LIB) is export{*};
+sub sb_stemmer_length(sb_stemmer) returns int32 is native(LIB) is export {*};
