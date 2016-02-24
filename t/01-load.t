@@ -1,11 +1,8 @@
-use v6;
+use v6.c;
 
 use Test;
 
-plan 1;
+use-ok('RPi::Wiring::Pi', 'Can load "RPi::Wiring::Pi" ok');
 
-use Lingua::Stem::Snowball;
+done-testing;
 
-ok 1, "'use Lingua::Stem::Snowball' worked!";
-
-done;
