@@ -1,2 +1,5 @@
 # perl6-snowball
-Binding para el compilador de Snowball
+
+Snowball compiler binding
+
+# WARNING: NOT WORKING YET
