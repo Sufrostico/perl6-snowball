@@ -1,5 +1,10 @@
-# perl6-snowball
+# Lingua::Stem::Snowball 
 
-Snowball compiler binding
+Perl6 binding for the "Snowball compiler"
+[http://snowballstem.org/](http://snowballstem.org/)
 
-# WARNING: NOT WORKING YET
+# Status
+
+    - Currently the NativeCalls are implemented
+    - No Snowball code shipped yet
+    - Only the load test pass
