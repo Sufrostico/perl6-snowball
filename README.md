@@ -20,7 +20,7 @@ Perl6 binding for the "Snowball compiler"
 
 ## TODO
 - [ ] Write a gazillion tests
-- [ ] Clone functions from the perl5's Lingua::Stem::Snowball
+- [ ] Clone functions from the [perl5's Lingua::Stem::Snowball](https://metacpan.org/pod/Lingua::Stem::Snowball)
 
 
   
