@@ -29,7 +29,7 @@ Perl6 binding for the "Snowball compiler"
     Then as root install the .h (usr/include) and .so (user/lib) files.
 
 ```
-    # make install shared_library
+    # make install_shared_library
 ```
 
  1. Install this module
