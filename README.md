@@ -12,15 +12,15 @@ Perl6 binding for the "Snowball compiler"
 
 ## Funciones trabajando
 
-  [x] sb_stemmer_list() returns CArray[Str]
-  [x] sb_stemmer_new(Str, Str) returns sb_stemmer
-  [x] sb_stemmer_delete(sb_stemmer)
-  [x] sb_stemmer_stem(sb_stemmer, Str, int32 ) returns CArray[uint8]
-  [ ] sb_stemmer_length(sb_stemmer) returns int32
+- [x] sb_stemmer_list() returns CArray[Str]
+- [x] sb_stemmer_new(Str, Str) returns sb_stemmer
+- [x] sb_stemmer_delete(sb_stemmer)
+- [x] sb_stemmer_stem(sb_stemmer, Str, int32 ) returns CArray[uint8]
+- [ ] sb_stemmer_length(sb_stemmer) returns int32
 
 ## TODO
-  [ ] Write a gazillion tests
-  [ ] Clones functions from the perl5's Lingua::Stem::Snowball
+- [ ] Write a gazillion tests
+- [ ] Clone functions from the perl5's Lingua::Stem::Snowball
 
 
   
