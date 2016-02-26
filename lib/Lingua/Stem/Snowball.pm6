@@ -15,18 +15,18 @@ struct SN_env {
     int * I;
     unsigned char * B;
 }; ]
-class SN_env is repr('CStruct') {
+my class SN_env is repr('CStruct') {
 
-    has Pointer[int8] $.p;
+    has CArray[uint8] $.p;
     has int32 $.c;
     has int32 $.l;
     has int32 $.lb;
     has int32 $.bra;
     has int32 $.ket;
 
-    has CArray[int8]    $.S;
-    has Pointer[int32]  $.I;
-    has CArray[int8]    $.B;
+    has CArray[uint8]   $.S;
+    has CArray[int32]   $.I;
+    has CArray[uint8]   $.B;
 }
 
 #`[
@@ -37,7 +37,7 @@ struct sb_stemmer {
 
     struct SN_env * env;
 }; ]
-class sb_stemmer is repr('CStruct') {
+my class sb_stemmer is repr('CStruct') {
 
     has Pointer $.create;
     has Pointer $.close;
@@ -45,8 +45,6 @@ class sb_stemmer is repr('CStruct') {
 
     has SN_env $.env;
 }
-
-
 
 # Not used here
 # typedef unsigned char sb_symbol; 
