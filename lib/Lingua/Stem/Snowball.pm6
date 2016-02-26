@@ -110,7 +110,7 @@ sub sb_stemmer_delete(sb_stemmer) is native(LIB) is export {*};
  *  If an out-of-memory error occurs, this will return NULL.  ]
 
 # const sb_symbol *   sb_stemmer_stem(struct sb_stemmer * stemmer, const sb_symbol * word, int size);
-sub sb_stemmer_stem(sb_stemmer, int8 , int32 ) returns Str is native(LIB) is export {*};
+sub sb_stemmer_stem(sb_stemmer, Str, int32 ) returns CArray[uint8] is native(LIB) is export {*};
 
 #`[ Get the length of the result of the last stemmed word.
  *  This should not be called before sb_stemmer_stem() has been called.  ]
