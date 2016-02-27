@@ -30,7 +30,7 @@ Perl6 binding for the "Snowball compiler"
     [Sufrostico/snowball](https://github.com/Sufrostico/snowball) because the
     [patch to generate the shared
     library](https://github.com/snowballstem/snowball/pull/35) has not been
-   a 11ccepted yet.
+   a accepted yet.
 
     To install the library
 
