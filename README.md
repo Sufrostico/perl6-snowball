@@ -8,7 +8,7 @@ Perl6 binding for the "Snowball compiler"
   - No Snowball code shipped, you need to install it from its own repo.
   - NativeCalls are implemented to emulate the libstemmer.h file.
   - Only the load and sb_stemmer_stem tests are implemented.
-  - NEED ASAP to write lots and lots of tests.
+  - NEED ASAP lots and lots of tests.
 
 ## Funciones trabajando
 
