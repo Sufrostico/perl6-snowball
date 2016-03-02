@@ -14,7 +14,14 @@ sb_stemmer_delete($stemmer);
 ok $result, "comput";
 
 $stemmer = sb_stemmer_new('english', 'UTF_8');
-$result  = sb_stemmer_stem($stemmer, "computer",  13);
+$result  = sb_stemmer_stem($stemmer, "computer",  9);
+
+sb_stemmer_delete($stemmer);
+
+ok $result, "comput";
+
+$stemmer = sb_stemmer_new('portuguese', 'UTF_8');
+$result  = sb_stemmer_stem($stemmer, "computador",  10);
 
 sb_stemmer_delete($stemmer);
 
