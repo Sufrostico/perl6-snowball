@@ -5,7 +5,7 @@ unit module Lingua::Stem::Snowball;
 use strict;
 use NativeCall;
 
-constant LIB = 'libstemmer';
+constant LIB = 'stemmer';
 
 #`[
 struct SN_env {
