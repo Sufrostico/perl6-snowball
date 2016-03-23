@@ -1,11 +1,7 @@
 use v6;
-
-unit module Lingua::Stem::Snowball;
-
-use strict;
 use NativeCall;
 
-constant LIB = 'libstemmer';
+unit module Lingua::Stem::Snowball;
 
 #`[
 struct SN_env {
@@ -34,7 +30,6 @@ struct sb_stemmer {
     struct SN_env * (*create)(void);
     void (*close)(struct SN_env *);
     int (*stem)(struct SN_env *);
-
     struct SN_env * env;
 }; ]
 my class sb_stemmer is repr('CStruct') {
@@ -59,7 +54,7 @@ my class sb_stemmer is repr('CStruct') {
  *  The list is terminated with a null pointer.
  *
  *  The list must not be modified in any way.  ]
-sub sb_stemmer_list() returns CArray[Str] is native(LIB) is export {*};
+sub sb_stemmer_list() returns CArray[Str] is native("stemmer") is export {*};
 
 #`[ Create a new stemmer object, using the specified algorithm, for the
  *  specified character encoding.
@@ -85,8 +80,8 @@ sub sb_stemmer_list() returns CArray[Str] is native(LIB) is export {*};
  *
  *  @note NULL will also be returned if an out of memory error occurs.  ]
 
- # struct sb_stemmer * sb_stemmer_new(const char * algorithm, const char * charenc);
-sub sb_stemmer_new(Str, Str) returns sb_stemmer is native(LIB) is export {*};
+# struct sb_stemmer * sb_stemmer_new(const char * algorithm, const char * charenc);
+sub sb_stemmer_new(Str, Str) returns sb_stemmer is native("stemmer") is export {*};
 
 #`[ Delete a stemmer object.
  *
@@ -97,7 +92,7 @@ sub sb_stemmer_new(Str, Str) returns sb_stemmer is native(LIB) is export {*};
  *  no effect.  ]
 
 # void                sb_stemmer_delete(struct sb_stemmer * stemmer);
-sub sb_stemmer_delete(sb_stemmer) is native(LIB) is export {*};
+sub sb_stemmer_delete(sb_stemmer) is native("stemmer") is export {*};
 
 #`[ Stem a word.
  *
@@ -110,10 +105,10 @@ sub sb_stemmer_delete(sb_stemmer) is native(LIB) is export {*};
  *  If an out-of-memory error occurs, this will return NULL.  ]
 
 # const sb_symbol *   sb_stemmer_stem(struct sb_stemmer * stemmer, const sb_symbol * word, int size);
-sub sb_stemmer_stem(sb_stemmer, Str, int32 ) returns CArray[uint8] is native(LIB) is export {*};
+our sub sb_stemmer_stem(sb_stemmer, Str is encoded('utf8'), int32) returns Str is native("stemmer") is export {*};
 
 #`[ Get the length of the result of the last stemmed word.
  *  This should not be called before sb_stemmer_stem() has been called.  ]
 
 # int                 sb_stemmer_length(struct sb_stemmer * stemmer);
-sub sb_stemmer_length(sb_stemmer) returns int32 is native(LIB) is export {*};
+sub sb_stemmer_length(sb_stemmer) returns int32 is native("stemmer") is export {*};
