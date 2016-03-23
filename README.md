@@ -53,3 +53,7 @@ Then as root install the .h (usr/include) and .so (user/lib) files.
     $ cd perl6-snowball
     $ panda install .
 ```
+
+# Contributors
+
+  - [Altai-man](https://github.com/Altai-man) 
