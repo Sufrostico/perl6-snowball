@@ -1,4 +1,4 @@
-# Lingua::Stem::Snowball 
+# Lingua::Stem::Snowball [![Build Status](https://travis-ci.org/Sufrostico/perl6-snowball.svg?branch=master)](https://travis-ci.org/Sufrostico/perl6-snowball)
 
 Perl6 binding for the "Snowball compiler"
 [http://snowballstem.org/](http://snowballstem.org/)
