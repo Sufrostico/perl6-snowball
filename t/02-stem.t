@@ -1,6 +1,7 @@
 use v6;
 
 use Test;
+use lib 'lib';
 use Lingua::Stem::Snowball;
 
 my sub len(Str $str --> int32) {
@@ -19,13 +20,13 @@ $result  = sb_stemmer_stem($stemmer, "computación", len("computación"));
 ok $result eq "comput", 'Spanish is ok';
 sb_stemmer_delete($stemmer);
 
-# # # Purtuguese.
+# Purtuguese.
 $stemmer = sb_stemmer_new('portuguese', 'UTF_8');
 $result  = sb_stemmer_stem($stemmer, "computador", len("computador"));
 ok $result eq "comput", 'Portuguese is ok';
 sb_stemmer_delete($stemmer);
 
-# # Russian.
+# Russian.
 $stemmer = sb_stemmer_new('russian', 'UTF_8');
 my Str $test_str = "компьютер";
 # Since for cyrillic we need just plain characters and EOL.
