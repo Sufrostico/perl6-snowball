@@ -8,3 +8,4 @@ before_install:
   - git checkout shared_library
   - make
   - sudo make install_shared_library
+  - cd ..
