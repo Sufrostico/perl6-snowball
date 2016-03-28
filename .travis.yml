@@ -7,4 +7,4 @@ before_install:
   - cd snowball
   - git checkout shared_library
   - make
-  - make install_shared_library
+  - sudo make install_shared_library
