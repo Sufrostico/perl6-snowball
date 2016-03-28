@@ -1,3 +1,9 @@
 language: perl6
 perl6:
   - latest
+  
+install:
+  - git clone git@github.com:Sufrostico/snowball.git
+  - cd snowball
+  - make
+  - make install_shared_library
