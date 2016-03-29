@@ -10,7 +10,7 @@ Perl6 binding for the "Snowball compiler"
   - Only the load and sb_stemmer_stem tests are implemented.
   - NEED ASAP lots and lots of tests.
 
-## Funciones trabajando
+## Functions working
 
 - [x] sb_stemmer_list() returns CArray[Str]
 - [x] sb_stemmer_new(Str, Str) returns sb_stemmer
