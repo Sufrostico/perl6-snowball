@@ -3,7 +3,7 @@
 Perl6 binding for the "Snowball compiler"
 [http://snowballstem.org/](http://snowballstem.org/)
 
-# Status
+# Status: **ALPHA**
 
   - No Snowball code shipped, you need to install it from its own repo.
   - NativeCalls are implemented to emulate the libstemmer.h file.
