@@ -35,7 +35,7 @@ Perl6 binding for the "Snowball compiler"
     To install the library
 
 ```
-    $ git clone git@github.com:Sufrostico/snowball.git sufrostico-snowball
+    $ git clone -b shared_library https://github.com/Sufrostico/snowball.git sufrostico-snowball
     $ cd sufrostico-snowball
     $ make
 ```
