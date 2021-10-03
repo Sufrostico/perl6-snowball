@@ -1,6 +1,6 @@
 {
     "perl": "6.*",
-    "name" : "Perl6 Snowball Binding",
+    "name" : "Lingua::Stem::Snowball",
     "version": "0.3",
     "author": "Aurelio Sanabria (Sufrostico) <sufrostico at gmail dot com>",
     "description" : "Perl 6 binding to the 'Snowball compiler and stemming algorithms' http://snowballstem.org/",
